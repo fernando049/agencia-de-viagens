@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacotes de Viagem</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinos.html">Destinos</a></li>
+                <li><a href="pacotes.html">Pacotes</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Nossos Pacotes de Viagem</h1>
+
+        <section class="pacote" id="rio-de-janeiro">
+            <h2>Pacote Rio de Janeiro</h2>
+            <div class="galeria">
+                <img src="/img/rj/Rj1.jpeg" alt="Rio de Janeiro 1" title="Cristo Redentor, Rio de Janeiro">
+                <img src="/img/rj/Brazil Copacabana.jpeg " alt="Rio de Janeiro 2" title="Praia de Copacabana, Rio de Janeiro">
+                <img src="/img/rj/Rio de Janeiro - Wikimapia.jpeg" alt="Rio de Janeiro 3" title="Pão de Açúcar, Rio de Janeiro">
+            </div>
+            <p>Inclui: Passagem aérea, hospedagem, café da manhã e passeios turísticos.</p>
+            <p>Data Ida: <input type="date" value="2024-12-20" id="ida-rj"></p>
+            <p>Data Volta: <input type="date" value="2024-12-27" id="volta-rj"></p>
+            <p class="preco">Preço: R$ <span id="preco-rj">2000,00</span></p>
+        </section>
+
+        <section class="pacote" id="sao-paulo">
+            <h2>Pacote São Paulo</h2>
+            <div class="galeria">
+                <img src="/img/sp/30 fotos de São Paulo especialmente selecionadas para você admirar.jpeg" alt="São Paulo 1" title="Ponte Estaiada Octavio Frias de Oliveira">
+                <img src="/img/sp/Bela Vista (SP)_ guia de atrações da Avenida Paulista ao Bixiga.jpeg" alt="São Paulo 2" title="Museu de Arte de São Paulo Assis Chateaubriand, Av. Paulista, 1578 - Bela Vista, São Paulo - SP">
+                <img src="/img/sp/Praia das Astúrias - Guarujá - SP.jpeg" alt="São Paulo 3" title="Praia das Astúrias - Guarujá - SP">
+            </div>
+            <p>Inclui: Passagem aérea, hospedagem, café da manhã e passeios turísticos.</p>
+            <p>Data Ida: <input type="date" value="2024-12-20" id="ida-sp"></p>
+            <p>Data Volta: <input type="date" value="2024-12-27" id="volta-sp"></p>
+            <p class="preco">Preço: R$ <span id="preco-sp">1800,00</span></p>
+        </section>
+
+        <section class="pacote" id="salvador">
+            <h2>Pacote Salvador</h2>
+            <div class="galeria">
+                <img src="/img/salvador/download.jpeg" alt="Salvador 1" title="Pelourinho, Salvador">
+                <img src="/img/salvador/563f48153c0b457e95118004ee285ac9-1722749647.jpg" alt="Salvador 2" title="Elevador Lacerda, Salvador">
+                <img src="/img/salvador/Pontos Turísticos de Salvador_ TOP 21 Lugares Para Conhecer.jpeg" alt="Salvador 3" title="Museu Náutico da Bahia - Farol da Barra">
+            </div>
+            <p>Inclui: Passagem aérea, hospedagem, café da manhã e passeios turísticos.</p>
+            <p>Data Ida: <input type="date" value="2024-12-25" id="ida-salvador"></p>
+            <p>Data Volta: <input type="date" value="2025-01-01" id="volta-salvador"></p>
+            <p class="preco">Preço: R$ <span id="preco-salvador">1900,00</span></p>
+        </section>
+    </main>
+
+    <footer>
+		<p class="footer">&copy;|| 2024|| Agência de Viagens | Fernando Alves de Souza</p>
+    </footer>
+
+    <script>
+        function calcularPreco(idaId, voltaId, precoId, precoBase) {
+            const ida = document.getElementById(idaId);
+            const volta = document.getElementById(voltaId);
+            const preco = document.getElementById(precoId);
+
+            function atualizarPreco() {
+                const dataIda = new Date(ida.value);
+                const dataVolta = new Date(volta.value);
+                const diferencaTempo = dataVolta - dataIda;
+                const dias = diferencaTempo / (1000 * 3600 * 24);
+                const novoPreco = precoBase + (dias * 100); // Exemplo: R$100 por dia
+                preco.textContent = novoPreco.toFixed(2).replace('.', ',');
+            }
+
+            ida.addEventListener('input', atualizarPreco);
+            volta.addEventListener('input', atualizarPreco);
+        }
+
+        calcularPreco('ida-rj', 'volta-rj', 'preco-rj', 2000);
+        calcularPreco('ida-sp', 'volta-sp', 'preco-sp', 1800);
+        calcularPreco('ida-salvador', 'volta-salvador', 'preco-salvador', 1900);
+    </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+/* Define a fonte local */
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('//modestic_sans/ Notespage.otf') format('woff2'),
+         url('/modestic_sans/ModesticSans-BoldItalic.ttf') format('woff');
+}
+
+/* Define a cor de fundo para o corpo da página */
+body {
+    background-color: #ffffff; /* Branco */
+    font-family: 'MinhaFonte', sans-serif; /* Fonte local */
+    font-size: 150%; /* Tamanho da fonte */
+}
+
+#menu {
+    display: flex; /* Usa flexbox para o layout */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+#menu ul {
+    list-style: none; /* Remove o marcador de lista */
+    text-transform: uppercase; /* Deixa os elementos do menu em maiúsculo */
+    position: absolute; /* Define a posição absoluta em relação ao site */
+    top: 0; /* Coloca o menu no topo da página */
+    padding: 0; /* Remove o padding padrão */
+}
+
+#menu li {
+    display: inline-block; /* Exibe os itens da lista em linha */
+    background-color: #dddddd; /* Cor de fundo dos itens do menu */
+    padding: 10px; /* Espaçamento interno do elemento */
+    margin: 4px; /* Margens dos elementos */
+}
+
+#menu li:hover {
+    background-color: #ffffff; /* Altera a cor de fundo ao passar o mouse */
+}
+
+#menu a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+p {
+    text-align: justify;
+    text-indent: 50px;
+    color: rgb(0, 0, 0);
+}
+
+h1 {
+    text-align: center;
+    color: #abcdef;
+    padding: 50px;
+}
+
+h2 {
+    text-align: center;
+    color: #012345;
+}
+
+h3 {
+    text-align: center;
+    color: brown;
+}
+
+h4 {
+    text-align: center;
+    color: black;
+}
+
+h5 {
+    text-align: center;
+    color: red;
+}
+
+a {
+    color: black; /* Cor dos links antes de serem clicados */
+}
+
+a:visited {
+    color: red; /* Cor dos links depois de serem clicados */
+}
+
+ol {
+    color: pink;
+}
+
+ul {
+    color: yellow;
+}
+
+img {
+    width: 300px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td:last-child {
+    font-weight: bold;
+    color: green;
+}
+
+/* Animação de piscar */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+.destino {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
+.galeria {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.galeria img {
+    width: 30%;
+    height: auto;
+    margin: 10px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.galeria img:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: right; /* Alinha o texto à direita */
+    padding: 20px;
+    background-color: transparent;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    right: 0; /* Posiciona o footer à direita */
+    width: auto; /* Ajusta a largura para caber o conteúdo */
+}
+
+input[type="date"] {
+    padding: 10px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #ff0202;
+    background-color: #f0f8ff;
+    margin: 10px 0;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type="date"]:focus {
+    border-color: #0d00ff;
+    box-shadow: 0 0 10px rgba(0, 86, 179, 0.5);
+    outline: none;
+}
